@@ -10,4 +10,4 @@ ease and speed this tool helped to create functional data. Further, there is the
 alternate option where a user can log in as a client to view their own reservations.
 
 The Schema:
-![](Screenshot 2022-03-15 at 12.16.29.png)
+![](schema.png)
