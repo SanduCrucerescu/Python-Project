@@ -12,5 +12,7 @@ alternate option where a user can log in as a client to view their own reservati
 In order to run the application the user must have PyQt5 library installed and 
 the run the "main.py" file.
 
+The database .ibd files ware added in the hotelManagement folder
+
 The Schema:
 ![](schema.png)
