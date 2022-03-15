@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 import adminMenu
 import admin_functions
+from connection import connection
 
 
 
@@ -86,9 +87,16 @@ class newEmployee(QWidget):
         if self.firstNameText.text() or self.lastNameText.text() or self.positionText.text() or self.salaryText.text() or self.usernameText.text() or self.passwordText.text():
             admin_functions.add_employee(self.firstNameText.text(), self.lastNameText.text(), self.positionText.text(),
                                          int(self.salaryText.text()), self.usernameText.text(), self.passwordText.text())
+
+            connection[0].execute("SELECT employee_id FROM employee "
+                                  "ORDER BY employee_id DESC LIMIT 1 ")
+
+            res = connection[0].fetchone()
+
+            i = int(str(res).strip("(),"))
             msgBox = QMessageBox()
             msgBox.setIcon(QMessageBox.Information)
-            msgBox.setText("Employee added successfully")
+            msgBox.setText(f"Employee added successfully \n With the ID: {i}")
             msgBox.setWindowTitle("Insert Successfully")
             msgBox.setStandardButtons(QMessageBox.Ok)
             msgBox.exec()
