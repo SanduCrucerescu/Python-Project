@@ -10,12 +10,12 @@ from connection import connection
 class newEmployee(QWidget):
     def __init__(self):
         super().__init__()
-        self.firstNameText = QLineEdit(None)
-        self.lastNameText = QLineEdit(None)
-        self.positionText = QLineEdit(None)
-        self.salaryText = QLineEdit(None)
-        self.usernameText = QLineEdit(None)
-        self.passwordText = QLineEdit(None)
+        self.firstNameText = QLineEdit()
+        self.lastNameText = QLineEdit()
+        self.positionText = QLineEdit()
+        self.salaryText = QLineEdit()
+        self.usernameText = QLineEdit()
+        self.passwordText = QLineEdit()
 
         self.firstNameText.setAttribute(Qt.WA_MacShowFocusRect, 0)
         self.lastNameText.setAttribute(Qt.WA_MacShowFocusRect, 0)
@@ -84,7 +84,8 @@ class newEmployee(QWidget):
         self.second_window.show()
 
     def onClickAddEmployee(self):
-        if self.firstNameText.text() or self.lastNameText.text() or self.positionText.text() or self.salaryText.text() or self.usernameText.text() or self.passwordText.text():
+        if self.firstNameText.text() or self.lastNameText.text() or self.positionText.text() or self.salaryText.text() \
+                or self.usernameText.text() or self.passwordText.text():
             admin_functions.add_employee(self.firstNameText.text(), self.lastNameText.text(), self.positionText.text(),
                                          int(self.salaryText.text()), self.usernameText.text(), self.passwordText.text())
 

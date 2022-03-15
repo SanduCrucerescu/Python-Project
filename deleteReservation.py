@@ -82,6 +82,7 @@ class deleteReservation(QWidget):
             msgBox.setStandardButtons(QMessageBox.Ok)
             msgBox.exec()
             self.reservationIDText.setText("")
+            self.table.clear()
         else:
             msgBox = QMessageBox()
             msgBox.setIcon(QMessageBox.Critical)
