@@ -9,5 +9,8 @@ used for this was generated using this source: https://www.mockaroo.com/ due to 
 ease and speed this tool helped to create functional data. Further, there is the 
 alternate option where a user can log in as a client to view their own reservations.
 
+In order to run the application the user must have PyQt5 library installed and 
+the run the "main.py" file.
+
 The Schema:
 ![](schema.png)
