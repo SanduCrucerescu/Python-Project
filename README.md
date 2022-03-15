@@ -15,4 +15,4 @@ the run the "main.py" file.
 The database .ibd files ware added in the hotelManagement folder
 
 The Schema:
-![](schema.png)
+![](schemaFinal.png)
