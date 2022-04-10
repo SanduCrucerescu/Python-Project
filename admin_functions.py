@@ -2,7 +2,7 @@ from datetime import datetime
 import mysql.connector as mysql
 
 def delete_employee(employee_firstname, employee_lastname):
-    cnx = mysql.connect(host="localhost", user="root", password="Crucerescu12?", database="Hotel_Management")
+    cnx = mysql.connect(host="localhost", user="root", password="root", database="Hotel_Management")
     cursor = cnx.cursor()
     cursor.execute(
         f"DELETE FROM employee WHERE employee_firstname = '{employee_firstname}' and employee_lastname = '{employee_lastname}';"
@@ -12,7 +12,7 @@ def delete_employee(employee_firstname, employee_lastname):
 
 
 def search_employee(employee_firstname, employee_lastname):
-    cnx = mysql.connect(host="localhost", user="root", password="Crucerescu12?", database="Hotel_Management")
+    cnx = mysql.connect(host="localhost", user="root", password="root", database="Hotel_Management")
     cursor = cnx.cursor()
     cursor.execute(f"SELECT * FROM employee "
                    f"WHERE employee_firstname = '{employee_firstname}' AND employee_lastname = '{employee_lastname}'")
@@ -27,7 +27,7 @@ def search_employee(employee_firstname, employee_lastname):
 
 
 def search_employeeID(empID):
-    cnx = mysql.connect(host="localhost", user="root", password="Crucerescu12?", database="Hotel_Management")
+    cnx = mysql.connect(host="localhost", user="root", password="root", database="Hotel_Management")
     cursor = cnx.cursor()
     cursor.execute(f"SELECT * FROM employee  WHERE employee_id = '{empID}'")
     res = cursor.fetchone()
@@ -41,7 +41,7 @@ def search_employeeID(empID):
 
 
 def add_employee(employee_firstname, employee_lastname, employee_position, employee_salary, employee_username, empployee_password):
-    cnx = mysql.connect(host="localhost", user="root", password="Crucerescu12?", database="Hotel_Management")
+    cnx = mysql.connect(host="localhost", user="root", password="root", database="Hotel_Management")
     cursor = cnx.cursor()
     now = datetime.now()
     employee_employmentdate = now.strftime("%Y-%m-%d")
@@ -56,7 +56,7 @@ def add_employee(employee_firstname, employee_lastname, employee_position, emplo
 
 
 def admin_edit_rsvp(rsvp_id):
-    cnx = mysql.connect(host="localhost", user="root", password="Crucerescu12?", database="Hotel_Management")
+    cnx = mysql.connect(host="localhost", user="root", password="root", database="Hotel_Management")
     cursor = cnx.cursor()
     cursor.execute(f"DELETE FROM reservation WHERE reservation_id = '{rsvp_id}';")
     cnx.commit()
@@ -64,7 +64,7 @@ def admin_edit_rsvp(rsvp_id):
 
 
 def search_reservations(rsvp_id):
-    cnx = mysql.connect(host="localhost", user="root", password="Crucerescu12?", database="Hotel_Management")
+    cnx = mysql.connect(host="localhost", user="root", password="root", database="Hotel_Management")
     cursor = cnx.cursor()
     cursor.execute(f"SELECT reservation_id FROM reservation where reservation_id = {rsvp_id}")
     res = cursor.fetchone()
@@ -78,7 +78,7 @@ def search_reservations(rsvp_id):
 
 
 def admin_edit_employee(employee_id, employee_firstname, employee_lastname, employee_position, employee_salary, employee_username, empployee_password):
-    cnx = mysql.connect(host="localhost", user="root", password="Crucerescu12?", database="Hotel_Management")
+    cnx = mysql.connect(host="localhost", user="root", password="root", database="Hotel_Management")
     cursor = cnx.cursor()
     cursor.execute(
         f"START TRANSACTION; "
@@ -106,7 +106,7 @@ def logging_main_menu(employee_username, employee_password):
     # if data == "error":
     #     return 0
 
-    c = mysql.connect(host="localhost", user="root", password = "Crucerescu12?" ,database="Hotel_Management")
+    c = mysql.connect(host="localhost", user="root", password = "root" ,database="Hotel_Management")
     con = c.cursor()
     con.execute(
         f"SELECT employee_position FROM employee INNER JOIN employee_login ON employee.employee_id = "
