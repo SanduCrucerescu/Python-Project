@@ -2,7 +2,7 @@ import mysql.connector as mysql
 import pandas as pd
 
 def connection():
-    cnx = mysql.connect(host="localhost", user="root", password = "Crucerescu12?" ,database="Hotel_Management")
+    cnx = mysql.connect(host="localhost", user="root", password = "root" ,database="Hotel_Management")
     mycursor = cnx.cursor(buffered=True)
     return mycursor, cnx
 
